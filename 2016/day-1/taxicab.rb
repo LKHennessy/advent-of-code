@@ -10,24 +10,29 @@ class Taxicab
 
       current_direction = turn(current_direction, turn_direction)
 
-      case current_direction
-        when :north
-          current_position[0] += move_distance
-        when :south
-          current_position[0] -= move_distance
-        when :east
-          current_position[1] += move_distance
-        when :west
-          current_position[1] -= move_distance
-      end
+      current_position = move(current_direction, current_position, move_distance)
     end
 
     current_position[0].abs + current_position[1].abs
   end
 
-  def turn(starting_direction, turn)
+  def move(direction, current_position, move_distance)
+    case direction
+      when :north
+        current_position[0] += move_distance
+      when :south
+        current_position[0] -= move_distance
+      when :east
+        current_position[1] += move_distance
+      when :west
+        current_position[1] -= move_distance
+    end
+    current_position
+  end
+
+  def turn(starting_direction, turn_direction)
     directions = [:north, :east, :south, :west]
-    case turn
+    case turn_direction
       when 'R'
         directions[directions.index(starting_direction) + 1] || directions[0]
       when 'L'
