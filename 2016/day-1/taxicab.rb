@@ -16,6 +16,8 @@ class Taxicab
     current_position[0].abs + current_position[1].abs
   end
 
+  private
+
   def move(direction, current_position, move_distance)
     case direction
       when :north

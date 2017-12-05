@@ -2,10 +2,6 @@ require 'minitest/autorun'
 require_relative 'taxicab'
 
 class TaxicabTest < Minitest::Test
-  def test_turn
-    assert_equal :east, Taxicab.new.turn(:north, 'R')
-  end
-
   def test_distance
     input = 'R2, L3'
     assert_equal 5, Taxicab.new.distance(input)
