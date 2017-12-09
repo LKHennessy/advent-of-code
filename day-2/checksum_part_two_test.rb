@@ -15,11 +15,10 @@ class ChecksumPartTwoTest < Minitest::Test
              7 5 3 6
              4 7 3 9'
 
-    assert_equal 7, ChecksumPartTwo.from(input)
+    assert_equal 8, ChecksumPartTwo.from(input)
   end
 
   def test_check_sum_part_two_3
-    skip
     input = '116	1259	1045	679	1334	157	277	1217	218	641	1089	136	247	1195	239	834
              269	1751	732	3016	260	6440	5773	4677	306	230	6928	7182	231	2942	2738	3617
              644	128	89	361	530	97	35	604	535	297	599	121	567	106	114	480
@@ -37,6 +36,6 @@ class ChecksumPartTwoTest < Minitest::Test
              2432	4030	3397	4032	3952	2727	157	3284	3450	3229	4169	3471	4255	155	127	186
              919	615	335	816	138	97	881	790	855	89	451	789	423	108	95	116'
 
-    assert_equal 41887, ChecksumPartTwo.from(input)
+    assert_equal 226, ChecksumPartTwo.from(input)
   end
 end
