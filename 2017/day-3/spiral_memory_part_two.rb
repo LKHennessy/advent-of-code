@@ -16,32 +16,32 @@ class SpiralMemoryPartTwo
         case direction
           when :right
             steps_to_next_turn.times do
-              x = data.keys.last[0] + 1
-              y = data.keys.last[1]
+              x = x_value(data) + 1
+              y = y_value(data)
               value = accumulate_surrounding_nodes(data, x, y)
               data[[x, y]] = value
               direction = :up
             end
           when :up
             steps_to_next_turn.times do
-              x = data.keys.last[0]
-              y = data.keys.last[1] + 1
+              x = x_value(data)
+              y = y_value(data) + 1
               value = accumulate_surrounding_nodes(data, x, y)
               data[[x, y]] = value
               direction = :left
             end
           when :left
             steps_to_next_turn.times do
-              x = data.keys.last[0] - 1
-              y = data.keys.last[1]
+              x = x_value(data) - 1
+              y = y_value(data)
               value = accumulate_surrounding_nodes(data, x, y)
               data[[x, y]] = value
               direction = :down
             end
           when :down
             steps_to_next_turn.times do
-              x = data.keys.last[0]
-              y = data.keys.last[1] - 1
+              x = x_value(data)
+              y = y_value(data) - 1
               value = accumulate_surrounding_nodes(data, x, y)
               data[[x, y]] = value
               direction = :right
@@ -67,5 +67,13 @@ class SpiralMemoryPartTwo
     surrounding_values << values[[x + 1,y - 1]]
 
     surrounding_values.compact.sum
+  end
+
+  def self.x_value(data)
+    data.keys.last[0]
+  end
+
+  def self.y_value(data)
+    data.keys.last[1]
   end
 end
