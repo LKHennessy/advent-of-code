@@ -22,7 +22,7 @@ class SpiralMemoryPartTwoTest < MiniTest::Test
     assert_equal 10, SpiralMemoryPartTwo.next_value(5)
   end
 
-  # def test_distance_6
-  #   assert_equal 312453, SpiralMemoryPartTwo.next_value(312051)
-  # end
+  def test_distance_6
+    assert_equal 312453, SpiralMemoryPartTwo.next_value(312051)
+  end
 end
